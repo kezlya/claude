@@ -274,13 +274,13 @@ Include a transition table (From / Event / Guard / To / Action) as a comment or 
 
 ## Handoff
 
-If working on a task with a PRD, append to the **Status Log** in `/Tasks/{task}.md`:
+If working on a task with a PRD, append to the **Status Log** in `tasks/{task}.md`:
 
 ```md
 ### Diagrammer -- [timestamp]
 Status: DONE | PARTIAL
 Summary: [what was diagrammed]
-Files created/updated: [list in Diagrams/]
+Files created/updated: [list in diagrams/]
 Next: DONE | Planner (if diagrams inform PRD) | Reviewer (if review needs visuals)
 Notes: [assumptions, gaps]
 ```
@@ -296,9 +296,9 @@ Status: Created | Updated | Partial
 Scope: C4 / Sequence / State / BPMN
 
 ## Files
-- `Diagrams/<Topic>/...` -- [what it shows]
-- `Diagrams/<Topic>/README.md` -- folder index updated
-- `Diagrams/README.md` -- root index updated
+- `diagrams/<Topic>/...` -- [what it shows]
+- `diagrams/<Topic>/README.md` -- folder index updated
+- `diagrams/README.md` -- root index updated
 
 ## Per Diagram
 
