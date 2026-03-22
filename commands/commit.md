@@ -1,32 +1,60 @@
 ---
+name: commit
 description: Stage, commit, and push changes with approval workflow
 ---
 
 # Commit Command
 
+Create a single, concise git commit in English and push it to the remote repository.
+
 ## Step 1: Gather Context
 
+Run these commands to understand the current state:
 - `git status --short --branch`
-- `git diff` and `git diff --cached`
-- `git log --oneline -5`
+- `git diff` (unstaged changes)
+- `git diff --cached` (staged changes)
 
-## Step 2: Determine Scope
+## Step 2: Analyze Changes
 
-**If on main/master with a small change:** Direct commit - single-line message, push.
-**If on main/master with significant changes:** Create a feature branch first.
-**If a PR description was already drafted by `/wrap`:** Use it.
+Based on the diff and branch name, determine:
+1. Which files should be included in this commit
+2. Whether changes represent a single logical unit
 
-## Step 3: Execute
+If the diff suggests **multiple unrelated changes** that should be separate commits, stop and ask the user before proceeding.
 
-1. Stage relevant files
-2. Create a concise commit (single line, imperative mood, max 72 chars)
-3. Push
-4. If PR-worthy: create PR with `gh pr create` using the `/wrap` description, or ask the user to run `/wrap` first
+## Step 3: Propose Commit
 
-## Rules
+Present to the user:
+- List of files to stage and why each is relevant
+- The proposed commit message
 
-- Never stage secrets (.env, credentials)
-- Never stage `agency/tasks/` files
-- Never mention AI, Claude, agents, or Co-Authored-By in commit messages or PR descriptions
-- Always show the proposed commit to the user before executing
-- For PRs: if no `/wrap` was run, ask the user if they want to run it first
+Wait for user approval before proceeding.
+
+## Step 4: Branch Safety
+
+If on `main` or `master`, create a new branch first using:
+- `feature/<short-description>`
+- `fix/<short-description>`
+- `chore/<short-description>`
+
+Rules: lowercase, hyphens only, keep it short.
+
+## Step 5: Execute
+
+After approval:
+1. Stage the approved files
+2. Create the commit
+3. Push to remote
+
+## Commit Message Rules
+
+- Single line, max 72 characters
+- Imperative mood (e.g. "Fix auth validation")
+- No footers, co-authors, or extra text
+
+## Exclusions
+
+Do not stage:
+- Unrelated or noisy changes (lockfile churn, IDE configs)
+- Files unrelated to the branch's purpose
+- Anything you're uncertain about
