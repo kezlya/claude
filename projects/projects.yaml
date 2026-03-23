@@ -1,0 +1,186 @@
+# Projects Configuration
+# Maps project groups to their repos with git origin URLs.
+# All repos live under ~/code/ on any machine.
+#
+# Usage:
+#   make clone-all              # Clone all repos
+#   make clone GROUP=cs         # Clone repos for a specific group
+
+groups:
+
+  - name: pg
+    description: "PatientGenie - Healthcare AI startup. Go backend, GCP, SOC2/HIPAA. Vitaly is consulting CTO with equity."
+    aliases: [patientgenie, patient genie, healthcare, voice agent]
+    repos:
+      - name: agent-dispatcher
+        description: "Go microservice routing IHA and scheduling automated calls via Twilio"
+        origin: https://github.com/PatientGenie/agent-dispatcher.git
+      - name: agent-templates
+        description: "Template architecture for AI agents with shared services and real-time voice processing"
+        origin: https://github.com/PatientGenie/agent-templates.git
+      - name: api
+        description: "Healthcare data platform with provider search, appointments, Gemini AI, and analytics"
+        origin: https://github.com/PatientGenie/api.git
+      - name: metabase-selfhost
+        description: "SOC2-compliant Metabase deployment with private VMs and Identity-Aware Proxy"
+        origin: https://github.com/devteamclub/metabase-selfhost.git
+      - name: owasp-zap-scans
+        description: "OWASP ZAP security scanning automation for penetration testing"
+        origin: https://github.com/PatientGenie/owasp-zap-scans.git
+      - name: patientgenie
+        description: "Monorepo: ask-website (patient facing) and marketing-website"
+        origin: https://github.com/PatientGenie/patientgenie.git
+      - name: profile-api
+        description: "Go API for user profile management with Elasticsearch integration"
+        origin: https://github.com/PatientGenie/profile-api.git
+      - name: rcs
+        description: "RCS conversation flow for healthcare Annual Wellness Visit scheduling"
+        origin: https://github.com/PatientGenie/rcs.git
+      - name: superadmin-api
+        description: "Go/Fiber REST API for superadmin management with Firebase auth and PostgreSQL"
+        origin: https://github.com/PatientGenie/superadmin-api.git
+
+  - name: tovarka
+    description: "Tovarka - Russian e-commerce marketplace analytics. Tracks sellers across Yandex Market, Ozon, Wildberries. Large PostgreSQL DB (~75GB). Go backend, GCP."
+    aliases: [tovarka, tovarka.ai, marketplace, marketplace analytics, yandex, ozon, wildberries]
+    repos:
+      - name: api
+        description: "Core API for marketplace operations and merchant management"
+        origin: https://github.com/YaSwift/api.git
+      - name: api-consumer
+        description: "Async worker consuming marketplace APIs (Ozon, Wildberries, Yandex)"
+        origin: https://github.com/YaSwift/api-consumer.git
+      - name: avito-api
+        description: "Go service generating XML feeds for Avito ad placements"
+        origin: https://github.com/YaSwift/avito-api.git
+      - name: metabase-selfhost
+        description: "Metabase deployment with Let's Encrypt SSL on GCP"
+        origin: https://github.com/devteamclub/metabase-selfhost.git
+      - name: n8n-selfhost
+        description: "N8N workflow automation with persistent disk on GCP"
+        origin: https://github.com/devteamclub/n8n-selfhost.git
+      - name: nocodb-selfhost
+        description: "NocoDB self-hosted with Nginx reverse proxy and SSL"
+        origin: https://github.com/YaSwift/nocodb-selfhost.git
+      - name: scraper
+        description: "Competitor data scraper service"
+        origin: https://github.com/YaSwift/scraper.git
+      - name: scraper-ru-integration
+        description: "Cloud Run service fetching competitor prices from MarketParser.ru API"
+        origin: https://github.com/YaSwift/scraper-ru-integration.git
+      - name: sholchev-api
+        description: "Go backend API for merchant operations and marketplace integration"
+        origin: https://github.com/YaSwift/sholchev-api.git
+      - name: tovarka-mcp
+        description: "Russian reverse proxy on Yandex Cloud for bypassing geo-blocking"
+        origin: https://github.com/YaSwift/tovarka-mcp.git
+      - name: vm-dns-proxy
+        description: "DNS proxy for traffic routing through Russian infrastructure"
+        origin: https://github.com/YaSwift/vm-dns-proxy.git
+
+  - name: cs
+    description: "CombatSport - Tournament management SaaS for combat sports. Stripe payments, multi-tenant, Go backend."
+    aliases: [combat-sport, combat sport club, tournament, fighting]
+    repos:
+      - name: combatsport
+        description: "Vite/Vue website for organizing competitions"
+        origin: https://github.com/devteamclub/combatsport.git
+      - name: combatsport-api
+        description: "Go backend API for events and athlete management"
+        origin: https://github.com/devteamclub/combatsport-api.git
+      - name: combatsport-seo
+        description: "SEO optimization layer"
+        origin: https://github.com/devteamclub/combatsport-seo.git
+      - name: images-api
+        description: "Go image processing API with WebP conversion and cloud storage"
+        origin: https://github.com/devteamclub/images-api.git
+      - name: pdf-generator-gcp-function
+        description: "Cloud Function for converting HTML pages to merged PDFs"
+        origin: https://github.com/devteamclub/pdf-generator-gcp-function.git
+
+  - name: dev-team
+    description: "RemoteDevTeam - Vitaly's staff augmentation company Remote Dev-Team LLC. ~$564K annual revenue. Internal tooling, Go-based."
+    aliases: [rdt, remote dev team, staff aug, my company, the llc]
+    repos:
+      - name: images-api
+        description: "Image processing API with WebP optimization (Go/Fiber)"
+        origin: https://github.com/devteamclub/images-api.git
+      - name: metabase-devservak
+        description: "Metabase deployment on GCP with SSL and Firebase"
+        origin: https://github.com/devteamclub/metabase-selfhost.git
+      - name: n8n-selfhost
+        description: "N8N workflow automation with persistent storage on GCP"
+        origin: https://github.com/devteamclub/n8n-selfhost.git
+
+  - name: bc
+    description: "BC - Client project with AI, mobile app, and workflow automation."
+    aliases: [bc]
+    repos:
+      - name: AI
+        description: "AI-related project"
+        origin: https://github.com/Beach-Camera/AI.git
+      - name: mobile-app
+        description: "Expo React Native mobile app with Gluestack UI"
+        origin: https://github.com/Beach-Camera/mobile-app.git
+      - name: n8n-selfhost
+        description: "N8N workflow automation on Azure AKS"
+        origin: https://github.com/Beach-Camera/n8n-selfhost.git
+
+  - name: bk
+    description: "BreakKonnect - Platform for organizing breaking/dance battle competitions."
+    aliases: [breakkonnect, break konnect, breaking, dance battle]
+    repos:
+      - name: breakkonnect
+        description: "Vue.js website for battle competitions"
+        origin: https://github.com/devteamclub/breakkonnect.git
+      - name: breakkonnect-api
+        description: "REST API for tournaments and scoring"
+        origin: https://github.com/devteamclub/breakkonnect-api.git
+
+  - name: li
+    description: "LinkedIn tooling - Backend services and Chrome extensions for LinkedIn."
+    aliases: [linkedin-tools]
+    repos:
+      - name: linkedin-be
+        description: "LinkedIn backend service"
+        origin: https://github.com/devteamclub/linkedin-be.git
+      - name: text-genie
+        description: "Chrome extension for AI-powered text processing with audio input"
+        origin: https://github.com/devteamclub/text-genie.git
+
+  - name: kezlya
+    description: "Personal projects - House management, LinkedIn content."
+    aliases: [personal]
+    repos:
+      - name: house
+        description: "Personal house knowledge base - mortgage, inspection, contractors, legal letters"
+        origin: https://github.com/kezlya/house.git
+      - name: linkedin
+        description: "LinkedIn content management - Wizard's Awakening series, post drafts, engagement stats"
+        origin: https://github.com/kezlya/linkedin.git
+
+  - name: wl
+    description: "WaveLandia - Media/entertainment project."
+    aliases: [wavelandia, wave landia]
+    repos:
+      - name: WaveLandia-api
+        description: "Go backend API for WaveLandia"
+        origin: https://github.com/Code-Swell/WaveLandia-api.git
+
+  - name: mby
+    description: "MBY - Monorepo with Go/Fiber API, Nuxt.js website, and Telegram bot."
+    aliases: [mby]
+    type: monorepo
+    origin: https://github.com/devteamclub/mby.git
+
+  - name: skool
+    description: "Skool - Planning docs for Agent Orchestrator Skool community."
+    aliases: [skool, agent orchestrator]
+    type: standalone
+    origin: https://github.com/devteamclub/skool.git
+
+  - name: unghosted-api
+    description: "Unghosted - Go API service."
+    aliases: [unghosted]
+    type: standalone
+    origin: https://github.com/devteamclub/unghosted-api.git

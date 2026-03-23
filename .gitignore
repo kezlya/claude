@@ -5,8 +5,9 @@
 # Include tracked files
 !.gitignore
 !CLAUDE.md
+!Makefile
 !agents/
 !agents/**
 !commands/
 !commands/**
-!2026-03-20-global-agent-transition.md
+!projects/projects.yaml
