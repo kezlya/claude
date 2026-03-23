@@ -5,7 +5,6 @@
 # Include tracked files
 !.gitignore
 !CLAUDE.md
-!Makefile
 !agents/
 !agents/**
 !commands/
