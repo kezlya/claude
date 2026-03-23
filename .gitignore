@@ -1,11 +1,12 @@
-# Only track agents, commands, and transition plan
+# Only track agents, commands, CLAUDE.md, and transition plan
 # Ignore everything else (local state, caches, sessions, etc.)
 *
 
-# Include agents and commands
+# Include tracked files
 !.gitignore
+!CLAUDE.md
 !agents/
 !agents/**
 !commands/
 !commands/**
-!2026-03-20-global-agent-transition.md
+!projects/projects.yaml
