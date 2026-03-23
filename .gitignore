@@ -5,6 +5,7 @@
 # Include tracked files
 !.gitignore
 !CLAUDE.md
+!SETUP.md
 !agents/
 !agents/**
 !commands/
