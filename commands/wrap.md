@@ -16,6 +16,15 @@ Generate a descriptive session name (5-8 words) that captures what was actually 
 
 ## Step 2: Draft PR Description
 
+**Before writing anything**, check if a PR already exists for the current branch:
+
+```bash
+gh pr view --json body,url --jq '{body, url}' 2>/dev/null
+```
+
+- **If a PR exists with a description**: Read it carefully. This is the baseline — it may already be well-written from a previous session. Your job is to **update what's missing or outdated** based on THIS session's work, not rewrite from scratch. Show the user what you'd change and why.
+- **If no PR exists or the description is empty**: Draft a new one from scratch using the template below.
+
 Synthesize from the CONVERSATION - the user's words, intent, decisions, and reasoning. Do not just read the diff or task file. Write for a non-technical stakeholder or a teammate reviewing the PR async.
 
 ```
