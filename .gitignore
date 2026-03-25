@@ -1,13 +1,2 @@
-# Only track agents, commands, CLAUDE.md, and transition plan
-# Ignore everything else (local state, caches, sessions, etc.)
-*
-
-# Include tracked files
-!.gitignore
-!CLAUDE.md
-!SETUP.md
-!agents/
-!agents/**
-!commands/
-!commands/**
-!projects/projects.yaml
+.idea/
+utils/.env
